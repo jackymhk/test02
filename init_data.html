@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2016 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html>
+<head>
+    <meta charset=utf-8 />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Init Data</title>
+
+    <!-- Material Design Theming -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <!-- Import and configure the Firebase SDK -->
+    <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+    <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+    <script src="/__/firebase/5.7.0/firebase-app.js"></script>
+    <script src="/__/firebase/5.7.0/firebase-auth.js"></script>
+    <script src="/__/firebase/5.7.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/init.js"></script>
+
+    <script type="text/javascript">
+        // Initialize Cloud Firestore through Firebase
+        var db = firebase.firestore();
+        db.settings({timestampsInSnapshots: true});
+
+        window.onload = function() {
+            var equipmentsRef = db.collection("Equipments");
+
+            equipmentsRef.doc("Tents").set({
+                equip_type: "tent"
+            });
+            equipmentsRef.doc("Yurts").set({
+                equip_type: "yurt"
+            });
+            equipmentsRef.doc("Shelters").set({
+                equip_type: "shelter"
+            });
+            equipmentsRef.doc("Cooksets").set({
+                equip_type: "cookset"
+            });
+            equipmentsRef.doc("Stoves").set({
+                equip_type: "stove"
+            });
+            equipmentsRef.doc("FirstAidKits").set({
+                equip_type: "first_aid_kit"
+            });
+            equipmentsRef.doc("Hammers").set({
+                equip_type: "hammer"
+            });
+            equipmentsRef.doc("Backpacks").set({
+                equip_type: "backpack"
+            });
+            equipmentsRef.doc("Others").set({
+                equip_type: "other"
+            });
+
+            // ----------------------------------
+            // Tents
+            var tentsRef = db.collection("Equipments").doc("Tents").collection("List");
+
+            tentsRef.doc("TE01").set({
+                brand: "Jackal",
+                model: "J-709",
+                capacity: 6,
+                pur_dt: null,
+                pur_chnl: null,
+                size: {
+                    unit: "cm",
+                    w: 210,
+                    l: 270,
+                    h: 175
+                },
+                base_corners: {
+                    good: 3,
+                    broken: 1
+                },
+                tent_base: "good",
+                bag: "lost",
+                poles: {
+                    status: "good",
+                    color: "blue",
+                    bag: "patched"
+                },
+                shelter: "good"
+            });
+            tentsRef.doc("TE03").set({
+                model: "J-709",
+                capacity: 6,
+                pur_dt: null,
+                pur_chnl: null,
+                size: {
+                    unit: "cm",
+                    w: 210,
+                    l: 270,
+                    h: 175
+                },
+                base_corners: {
+                    good: 4,
+                    broken: 0
+                },
+                tent_base: "good",
+                bag: "lost",
+                poles: {
+                    status: "good",
+                    color: "blue",
+                    bag: "patched"
+                },
+                shelter: "good"
+            });
+            tentsRef.doc("TE04").set({
+                model: "J-7011",
+                capacity: 8,
+                pur_dt: null,
+                pur_chnl: null,
+                size: {
+                    unit: "cm",
+                    w: 210,
+                    l: 335,
+                    h: 175
+                },
+                base_corners: {
+                    good: 4,
+                    broken: 0
+                },
+                tent_base: "good",
+                bag: "lost",
+                poles: {
+                    status: "good",
+                    color: "blue",
+                    bag: "patched"
+                },
+                shelter: "good"
+            });
+            tentsRef.doc("TE11").set({
+                brand: "Jackal",
+                model: "J-709",
+                capacity: 6,
+                pur_dt: new Date('2016','11','15'),
+                pur_chnl: "school",
+                size: {
+                    unit: "cm",
+                    w: 210,
+                    l: 270,
+                    h: 175
+                },
+                base_corners: {
+                    good: 4,
+                    broken: 0
+                },
+                tent_base: "broken",
+                bag: "good",
+                poles: {
+                    status: "good",
+                    color: "black",
+                    bag: "good"
+                },
+                shelter: "good"
+            });
+            tentsRef.doc("TE12").set({
+                brand: "Jackal",
+                model: "J-7011",
+                capacity: 8,
+                pur_dt: new Date('2016','11','15'),
+                pur_chnl: "school",
+                size: {
+                    unit: "cm",
+                    w: 210,
+                    l: 335,
+                    h: 175
+                },
+                base_corners: {
+                    good: 4,
+                    broken: 0
+                },
+                tent_base: "patched",
+                bag: "broken",
+                poles: {
+                    status: "good",
+                    color: "black",
+                    bag: "good"
+                },
+                shelter: "good"
+            });
+            tentsRef.doc("TE13").set({
+                brand: "Jackal",
+                model: "J-707",
+                capacity: 4,
+                pur_dt: new Date('2018','3','1'),
+                pur_chnl: "school",
+                size: {
+                    unit: "cm",
+                    w: 215,
+                    l: 215,
+                    h: 147
+                },
+                base_corners: {
+                    good: 3,
+                    broken: 1
+                },
+                tent_base: "good",
+                bag: "broken",
+                poles: {
+                    status: "good",
+                    color: "black",
+                    bag: "good"
+                },
+                shelter: "good"
+            });
+            tentsRef.doc("TE14").set({
+                brand: "Jackal",
+                model: "J-707",
+                capacity: 4,
+                pur_dt: new Date('2018','3','1'),
+                pur_chnl: "school",
+                size: {
+                    unit: "cm",
+                    w: 215,
+                    l: 215,
+                    h: 147
+                },
+                tent_base: "good",
+                base_corners: {
+                    good: 4,
+                    broken: 0
+                },
+                bag: "good",
+                poles: {
+                    status: "good",
+                    color: "black",
+                    bag: "good"
+                },
+                shelter: "good"
+            });
+            tentsRef.doc("TE15").set({
+                model: "J-707",
+                capacity: 4,
+                pur_dt: new Date('2018','9','6'),
+                pur_chnl: "ricky_ho",
+                size: {
+                    unit: "cm",
+                    w: 215,
+                    l: 215,
+                    h: 147
+                },
+                base_corners: {
+                    good: 4,
+                    broken: 0
+                },
+                tent_base: "good",
+                bag: "good",
+                poles: {
+                    status: "good",
+                    color: "black",
+                    bag: "good"
+                },
+                shelter: "good"
+            });
+
+            // ----------------------------------
+            // Yurts
+            var yurtsRef = db.collection("Equipments").doc("Yurts").collection("List");
+
+            yurtsRef.doc("VT01").set({
+                brand: "LUXE",
+                model: null,
+                capacity: 2,
+                pur_dt: new Date('2003','9','1'),
+                pur_chnl: "scout_group",
+                size: {
+                    unit: "cm",
+                    w: 200,
+                    l: 145,
+                    h: 124
+                }
+            });
+            yurtsRef.doc("VT03").set({
+                brand: "LUXE",
+                model: null,
+                capacity: 5,
+                pur_dt: new Date('2005','9','1'),
+                pur_chnl: "scout_group",
+                size: {
+                    unit: "cm",
+                    w: 312,
+                    l: 218,
+                    h: 136
+                }
+            });
+            yurtsRef.doc("VT04").set({
+                brand: "LUXE",
+                model: null,
+                capacity: 5,
+                pur_dt: new Date('2011','9','1'),
+                pur_chnl: "scout_group",
+                size: {
+                    unit: "cm",
+                    w: 259,
+                    l: 209,
+                    h: 162
+                }
+            });
+            yurtsRef.doc("VT05").set({
+                brand: "LUXE",
+                model: "Safari 4",
+                capacity: 4,
+                pur_dt: new Date('2011','7','1'),
+                pur_chnl: "scout_group",
+                size: {
+                    unit: "cm",
+                    w: 210,
+                    l: 210,
+                    h: 125
+                }
+            });
+            yurtsRef.doc("VT06").set({
+                brand: "LUXE",
+                model: "Safari 4",
+                capacity: 4,
+                pur_dt: new Date('2011','7','1'),
+                pur_chnl: "scout_group",
+                size: {
+                    unit: "cm",
+                    w: 210,
+                    l: 210,
+                    h: 125
+                }
+            });
+
+            // ----------------------------------
+            // Shelters
+            var sheltersRef = db.collection("Equipments").doc("Shelters").collection("List");
+
+            sheltersRef.doc("TF01").set({
+                brand: "Jackal",
+                model: "709",
+                pur_dt: null,
+                pur_chnl: null,
+                size: {
+                    unit: "cm",
+                    w: 215,
+                    l: 360
+                }
+            });
+            sheltersRef.doc("TF03").set({
+                brand: "Jackal",
+                model: "714",
+                pur_dt: null,
+                pur_chnl: null,
+                size: {
+                    unit: "cm",
+                    w: 215,
+                    l: 427
+                }
+            });
+            sheltersRef.doc("TF04").set({
+                brand: "Jackal",
+                model: "714",
+                pur_dt: null,
+                pur_chnl: null,
+                size: {
+                    unit: "cm",
+                    w: 215,
+                    l: 427
+                }
+            });
+            sheltersRef.doc("TF05").set({
+                brand: "Jackal",
+                model: null,
+                pur_dt: new Date("2018", "9", "1"),
+                pur_chnl: null,
+                size: {
+                    unit: "cm",
+                    w: 586,
+                    l: 488
+                }
+            });
+            sheltersRef.doc("TF06").set({
+                brand: "Jackal",
+                model: null,
+                pur_dt: new Date("2018", "9", "6"),
+                pur_chnl: "ricky_ho",
+                size: {
+                    unit: "cm",
+                    w: 596,
+                    l: 496
+                }
+            });
+            sheltersRef.doc("TF07").set({
+                brand: "Jackal",
+                model: "714",
+                pur_dt: null,
+                pur_chnl: null,
+                size: {
+                    unit: "cm",
+                    w: 215,
+                    l: 427
+                }
+            });
+            sheltersRef.doc("TF08").set({
+                brand: "Triton",
+                model: "S1414",
+                pur_dt: new Date("2018", "10", "1"),
+                pur_chnl: null,
+                size: {
+                    unit: "cm",
+                    w: 420,
+                    l: 420
+                }
+            });
+
+            // ----------------------------------
+            // Cooksets
+            var cooksetsRef = db.collection("Equipments").doc("Cooksets").collection("List");
+
+            cooksetsRef.doc("CS02").set({
+                brand: "Tierra",
+                model: null,
+                pur_dt: null,
+                pur_chnl: null
+            });
+            cooksetsRef.doc("CS03").set({
+                brand: "Tierra",
+                model: null,
+                pur_dt: null,
+                pur_chnl: null
+            });
+            cooksetsRef.doc("CS04").set({
+                brand: "Tierra",
+                model: "TS-701",
+                pur_dt: new Date("2014", "7", "1"),
+                pur_chnl: "scout_group"
+            });
+            cooksetsRef.doc("CS05").set({
+                brand: "Tierra",
+                model: "TS-701",
+                pur_dt: new Date("2014", "7", "1"),
+                pur_chnl: "scout_group"
+            });
+            cooksetsRef.doc("CS06").set({
+                brand: "Tierra",
+                model: "TSB-1402",
+                pur_dt: new Date("2016", "11", "15"),
+                pur_chnl: "school"
+            });
+            cooksetsRef.doc("CS07").set({
+                brand: "Tierra",
+                model: "TSB-1402",
+                pur_dt: new Date("2016", "11", "15"),
+                pur_chnl: "school"
+            });
+            cooksetsRef.doc("CS08").set({
+                brand: "Tierra",
+                model: "TSB-1402",
+                pur_dt: new Date("2016", "11", "15"),
+                pur_chnl: "school"
+            });
+
+            // ----------------------------------
+            // Stoves
+            var stovesRef = db.collection("Equipments").doc("Stoves").collection("List");
+
+            stovesRef.doc("ST01").set({
+                brand: "Kovea",
+                model: "KB-0211",
+                pur_dt: new Date("2008", "0", "1"),
+                pur_chnl: "scout_group",
+                stove_category: "remote_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 118,
+                    l: 103,
+                    h: 92
+                }
+            });
+            stovesRef.doc("ST04").set({
+                brand: "Kovea",
+                model: "TKB-8911-1",
+                pur_dt: new Date("2008", "0", "1"),
+                pur_chnl: "scout_group",
+                stove_category: "top_mount_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 122,
+                    l: 100,
+                    h: 125
+                }
+            });
+            stovesRef.doc("ST05").set({
+                brand: "Kovea",
+                model: "TKB-8911-1",
+                pur_dt: new Date("2006", "9", "1"),
+                pur_chnl: "scout_group",
+                stove_category: "top_mount_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 122,
+                    l: 100,
+                    h: 125
+                }
+            });
+            stovesRef.doc("ST06").set({
+                brand: "Kovea",
+                model: "TKB-8911-1",
+                pur_dt: new Date("2006", "9", "1"),
+                pur_chnl: "scout_group",
+                stove_category: "top_mount_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 122,
+                    l: 100,
+                    h: 125
+                }
+            });
+            stovesRef.doc("ST07").set({
+                brand: "Kovea",
+                model: "TKB-8901",
+                pur_dt: new Date("2014", "7", "1"),
+                pur_chnl: "scout_group",
+                stove_category: "top_mount_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 122,
+                    l: 100,
+                    h: 125
+                }
+            });
+            stovesRef.doc("ST08").set({
+                brand: "Kovea",
+                model: "TKB-8900",
+                pur_dt: new Date("2014", "7", "1"),
+                pur_chnl: "scout_group",
+                stove_category: "top_mount_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 122,
+                    l: 100,
+                    h: 125
+                }
+            });
+            stovesRef.doc("ST09").set({
+                brand: "Kovea",
+                model: "TKB-8899",
+                pur_dt: new Date("2014", "7", "1"),
+                pur_chnl: "scout_group",
+                stove_category: "top_mount_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 122,
+                    l: 100,
+                    h: 125
+                }
+            });
+            stovesRef.doc("ST10").set({
+                brand: "Kovea",
+                model: "TKB-8898",
+                pur_dt: new Date("2014", "7", "1"),
+                pur_chnl: "scout_group",
+                stove_category: "top_mount_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 122,
+                    l: 100,
+                    h: 125
+                }
+            });
+            stovesRef.doc("ST11").set({
+                brand: "Kovea",
+                model: "TKB-8911-1",
+                pur_dt: new Date("2006", "9", "1"),
+                pur_chnl: "scout_group",
+                category: "top_mount_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 122,
+                    l: 100,
+                    h: 125
+                }
+            });
+            stovesRef.doc("ST12").set({
+                brand: "Kovea",
+                model: "TKB-8911-1",
+                pur_dt: new Date("2006", "9", "1"),
+                pur_chnl: "scout_group",
+                stove_category: "top_mount_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 122,
+                    l: 100,
+                    h: 125
+                }
+            });
+            stovesRef.doc("ST13").set({
+                brand: "Kovea",
+                model: "TKB-8901",
+                pur_dt: new Date("2016", "11", "15"),
+                pur_chnl: "school",
+                category: "top_mount_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 122,
+                    l: 100,
+                    h: 125
+                }
+            });
+            stovesRef.doc("ST14").set({
+                brand: "Kovea",
+                model: "TKB-8901",
+                pur_dt: new Date("2016", "11", "15"),
+                pur_chnl: "school",
+                stove_category: "top_mount_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 122,
+                    l: 100,
+                    h: 125
+                }
+            });
+            stovesRef.doc("ST15").set({
+                brand: "Kovea",
+                model: "TKB-N9703",
+                pur_dt: new Date("2018", "9", "6"),
+                pur_chnl: "ricky_ho",
+                stove_category: "remote_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 140,
+                    l: 90,
+                    h: 145
+                }
+            });
+            stovesRef.doc("ST16").set({
+                brand: "Kovea",
+                model: "TKB-N9703",
+                pur_dt: new Date("2018", "9", "6"),
+                pur_chnl: "ricky_ho",
+                stove_category: "remote_canister",
+                box_size: {
+                    unit: "mm",
+                    w: 140,
+                    l: 90,
+                    h: 145
+                }
+            });
+
+            // ----------------------------------
+            // FirstAidKits
+            var firstAidKitsRef = db.collection("Equipments").doc("FirstAidKits").collection("List");
+
+            firstAidKitsRef.doc("FA01").set({
+                brand: null,
+                pur_dt: null,
+                pur_chnl: null,
+                bag_type: "zipper_bag"
+            });
+            firstAidKitsRef.doc("FA02").set({
+                brand: null,
+                pur_dt: null,
+                pur_chnl: null,
+                bag_type: "waterproof_bag"
+            });
+            firstAidKitsRef.doc("FA03").set({
+                brand: null,
+                pur_dt: null,
+                pur_chnl: null,
+                bag_type: "waterproof_bag"
+            });
+            firstAidKitsRef.doc("FA04").set({
+                brand: null,
+                pur_dt: null,
+                pur_chnl: null,
+                bag_type: "waterproof_bag"
+            });
+            firstAidKitsRef.doc("FA05").set({
+                brand: null,
+                pur_dt: null,
+                pur_chnl: null,
+                bag_type: "waterproof_bag"
+            });
+            firstAidKitsRef.doc("FA06").set({
+                brand: "Tatonka",
+                pur_dt: new Date("2018", "9", "6"),
+                pur_chnl: "ricky_ho",
+                bag_type: "zipper_bag"
+            });
+
+            // ----------------------------------
+            // Hammers
+            var hammersRef = db.collection("Equipments").doc("Hammers").collection("List");
+
+            hammersRef.doc("HM01").set({
+                brand: null,
+                pur_dt: null,
+                pur_chnl: null
+            });
+            hammersRef.doc("HM02").set({
+                brand: null,
+                pur_dt: new Date("2014", "10", "1"),
+                pur_chnl: "scout_group"
+            });
+            hammersRef.doc("HM04").set({
+                brand: null,
+                pur_dt: new Date("2014", "10", "1"),
+                pur_chnl: "scout_group"
+            });
+            hammersRef.doc("HM05").set({
+                brand: null,
+                pur_dt: new Date("2014", "10", "1"),
+                pur_chnl: "scout_group"
+            });
+            hammersRef.doc("HM06").set({
+                brand: "Quechua",
+                pur_dt: new Date("2018", "4", "1"),
+                pur_chnl: "school"
+            });
+            hammersRef.doc("HM07").set({
+                brand: "Quechua",
+                pur_dt: new Date("2018", "4", "1"),
+                pur_chnl: "school"
+            });
+            hammersRef.doc("HM08").set({
+                brand: "Quechua",
+                pur_dt: new Date("2018", "9", "6"),
+                pur_chnl: "ricky_ho"
+            });
+            hammersRef.doc("HM09").set({
+                brand: "Quechua",
+                pur_dt: new Date("2018", "10", "1"),
+                pur_chnl: null
+            });
+            hammersRef.doc("HM10").set({
+                brand: "Quechua",
+                pur_dt: new Date("2018", "10", "1"),
+                pur_chnl: null
+            });
+
+            // ----------------------------------
+            // Backpacks
+            var backpacksRef = db.collection("Equipments").doc("Backpacks").collection("List");
+
+            backpacksRef.doc("BP01").set({
+                brand: "Leaveland",
+                pur_dt: new Date("2018", "9", "6"),
+                pur_chnl: "ricky_ho",
+                volume: 70
+            });
+            backpacksRef.doc("BP02").set({
+                brand: "Leaveland",
+                pur_dt: new Date("2018", "9", "6"),
+                pur_chnl: "ricky_ho",
+                size: {
+                    unit: "L",
+                    v: 70
+                }
+            });
+            backpacksRef.doc("BP03").set({
+                brand: "Leaveland",
+                pur_dt: new Date("2018", "9", "6"),
+                pur_chnl: "ricky_ho",
+                size: {
+                    unit: "L",
+                    v: 70
+                }
+            });
+            backpacksRef.doc("BP04").set({
+                brand: "Leaveland",
+                pur_dt: new Date("2018", "9", "6"),
+                pur_chnl: "ricky_ho",
+                size: {
+                    unit: "L",
+                    v: 70
+                }
+            });
+            backpacksRef.doc("BP05").set({
+                brand: "Leaveland",
+                pur_dt: new Date("2018", "9", "6"),
+                pur_chnl: null,
+                size: {
+                    unit: "L",
+                    v: 70
+                }
+            });
+            backpacksRef.doc("BP06").set({
+                brand: "Leaveland",
+                pur_dt: new Date("2018", "9", "6"),
+                pur_chnl: null,
+                size: {
+                    unit: "L",
+                    v: 70
+                }
+            });
+            backpacksRef.doc("BP07").set({
+                brand: "Leaveland",
+                pur_dt: new Date("2018", "9", "6"),
+                pur_chnl: null,
+                size: {
+                    unit: "L",
+                    v: 70
+                }
+            });
+
+            // ----------------------------------
+            // Others
+            var othersRef = db.collection("Equipments").doc("Others").collection("List");
+
+            othersRef.doc("WS01").set({
+                equip_type: "windshield",
+                brand: null,
+                model: "TOP-TBU-2401",
+                pur_dt: new Date("2018", "3", "1"),
+                pur_chnl: "school"
+            });
+            othersRef.doc("WS02").set({
+                equip_type: "windshield",
+                brand: null,
+                model: "TOP-TBU-2401",
+                pur_dt: new Date("2018", "3", "1"),
+                pur_chnl: "school"
+            });
+            othersRef.doc("WS03").set({
+                equip_type: "windshield",
+                brand: null,
+                model: "TOP-TBU-2401",
+                pur_dt: new Date("2018", "3", "1"),
+                pur_chnl: "school"
+            });
+            othersRef.doc("WT01").set({
+                equip_type: "water_tank",
+                brand: null,
+                model: "WP-WA15",
+                pur_dt: null,
+                pur_chnl: null,
+                size: {
+                    unit: "L",
+                    v: 15
+                }
+            });
+            othersRef.doc("WT02").set({
+                equip_type: "water_tank",
+                brand: null,
+                model: "WP-WA15",
+                pur_dt: new Date("2018", "3", "1"),
+                pur_chnl: "school",
+                size: {
+                    unit: "L",
+                    v: 15
+                }
+            });
+
+            $("#status").text("Done.")
+        };
+    </script>
+</head>
+<body>
+    <div id="status"></div>
+</body>
+</html>
