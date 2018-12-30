@@ -91,16 +91,23 @@ limitations under the License.
                     good: 3,
                     broken: 1
                 },
-                tent_base: "good",
-                bag: "lost",
+                tent_base: {
+                    status: "good"
+                },
+                bag: {
+                    status: "lost"
+                },
                 poles: {
                     status: "good",
                     color: "blue",
                     bag: "patched"
                 },
-                shelter: "good"
+                shelter: {
+                    status: "good"
+                }
             });
             tentsRef.doc("TE03").set({
+                brand: "Jackal",
                 model: "J-709",
                 capacity: 6,
                 pur_dt: null,
@@ -115,16 +122,23 @@ limitations under the License.
                     good: 4,
                     broken: 0
                 },
-                tent_base: "good",
-                bag: "lost",
+                tent_base: {
+                    status: "good"
+                },
+                bag: {
+                    status: "lost"
+                },
                 poles: {
                     status: "good",
                     color: "blue",
                     bag: "patched"
                 },
-                shelter: "good"
+                shelter: {
+                    status: "good"
+                }
             });
             tentsRef.doc("TE04").set({
+                brand: "Jackal",
                 model: "J-7011",
                 capacity: 8,
                 pur_dt: null,
@@ -139,14 +153,20 @@ limitations under the License.
                     good: 4,
                     broken: 0
                 },
-                tent_base: "good",
-                bag: "lost",
+                tent_base: {
+                    status: "good"
+                },
+                bag: {
+                    status: "lost"
+                },
                 poles: {
                     status: "good",
                     color: "blue",
                     bag: "patched"
                 },
-                shelter: "good"
+                shelter: {
+                    status: "good"
+                }
             });
             tentsRef.doc("TE11").set({
                 brand: "Jackal",
@@ -164,14 +184,21 @@ limitations under the License.
                     good: 4,
                     broken: 0
                 },
-                tent_base: "broken",
-                bag: "good",
+                tent_base: {
+                    status: "broken",
+                    remarks: "近底角"
+                },
+                bag: {
+                    status: "good"
+                },
                 poles: {
                     status: "good",
                     color: "black",
                     bag: "good"
                 },
-                shelter: "good"
+                shelter: {
+                    status: "good"
+                }
             });
             tentsRef.doc("TE12").set({
                 brand: "Jackal",
@@ -189,14 +216,22 @@ limitations under the License.
                     good: 4,
                     broken: 0
                 },
-                tent_base: "patched",
-                bag: "broken",
+                tent_base: {
+                    status: "patched",
+                    remarks: "營底"
+                },
+                bag: {
+                    status: "broken",
+                    remarks: "側邊扯爆"
+                },
                 poles: {
                     status: "good",
                     color: "black",
                     bag: "good"
                 },
-                shelter: "good"
+                shelter: {
+                    status: "good"
+                }
             });
             tentsRef.doc("TE13").set({
                 brand: "Jackal",
@@ -214,14 +249,21 @@ limitations under the License.
                     good: 3,
                     broken: 1
                 },
-                tent_base: "good",
-                bag: "broken",
+                tent_base: {
+                    status: "good",
+                },
+                bag: {
+                    status: "broken",
+                    remarks: "側邊扯爆"
+                },
                 poles: {
                     status: "good",
                     color: "black",
                     bag: "good"
                 },
-                shelter: "good"
+                shelter: {
+                    status: "good"
+                }
             });
             tentsRef.doc("TE14").set({
                 brand: "Jackal",
@@ -235,20 +277,27 @@ limitations under the License.
                     l: 215,
                     h: 147
                 },
-                tent_base: "good",
+                tent_base: {
+                    status: "good",
+                },
                 base_corners: {
                     good: 4,
                     broken: 0
                 },
-                bag: "good",
+                bag: {
+                    status: "good"
+                },
                 poles: {
                     status: "good",
                     color: "black",
                     bag: "good"
                 },
-                shelter: "good"
+                shelter: {
+                    status: "good"
+                }
             });
             tentsRef.doc("TE15").set({
+                brand: "Jackal",
                 model: "J-707",
                 capacity: 4,
                 pur_dt: new Date('2018','9','6'),
@@ -263,14 +312,20 @@ limitations under the License.
                     good: 4,
                     broken: 0
                 },
-                tent_base: "good",
-                bag: "good",
+                tent_base: {
+                    status: "good",
+                },
+                bag: {
+                    status: "good"
+                },
                 poles: {
                     status: "good",
                     color: "black",
                     bag: "good"
                 },
-                shelter: "good"
+                shelter: {
+                    status: "good"
+                }
             });
 
             // ----------------------------------
@@ -433,43 +488,420 @@ limitations under the License.
                 brand: "Tierra",
                 model: null,
                 pur_dt: null,
-                pur_chnl: null
+                pur_chnl: null,
+                bag: {
+                    status: "good"
+                },
+                components: [
+                    { name: "大煲",
+                      seq: 1,
+                      status: "good"
+                    },
+                    { name: "中煲",
+                      seq: 2,
+                      status: "good"
+                    },
+                    { name: "細煲連蓋#1",
+                      seq: 3,
+                      status: "good"
+                    },
+                    { name: "細煲連蓋#2",
+                      seq: 4,
+                      status: "good"
+                    },
+                    { name: "大平底鑊",
+                      seq: 5,
+                      status: "good"
+                    },
+                    { name: "細平底鑊",
+                      seq: 6,
+                      status: "good"
+                    },
+                    { name: "湯勺",
+                      seq: 7,
+                      status: "lost"
+                    }
+                ]
             });
             cooksetsRef.doc("CS03").set({
                 brand: "Tierra",
                 model: null,
                 pur_dt: null,
-                pur_chnl: null
+                pur_chnl: null,
+                bag: {
+                    status: "good"
+                },
+                components: [
+                    { name: "大煲",
+                      seq: 1,
+                      status: "good"
+                    },
+                    { name: "中煲連蓋",
+                      seq: 2,
+                      status: "good"
+                    },
+                    { name: "細煲連蓋",
+                      seq: 3,
+                      status: "good"
+                    },
+                    { name: "大平底鑊",
+                      seq: 4,
+                      status: "good"
+                    },
+                    { name: "細平底鑊",
+                      seq: 5,
+                      status: "good"
+                    },
+                    { name: "湯勺",
+                      seq: 6,
+                      status: "lost"
+                    }
+                ]
             });
             cooksetsRef.doc("CS04").set({
                 brand: "Tierra",
                 model: "TS-701",
                 pur_dt: new Date("2014", "7", "1"),
-                pur_chnl: "scout_group"
+                pur_chnl: "scout_group",
+                bag: {
+                    status: "good",
+                    color: "black"
+                },
+                components: [
+                    { name: "5公升大煲",
+                      seq: 1,
+                      status: "broken",
+                      remarks: "手柄灣了",
+                      size: {
+                          unit: "mm",
+                          d: 225,
+                          h: 128
+                      }
+                    },
+                    { name: "3公升中煲連蓋",
+                      seq: 2,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 198,
+                          h: 108
+                      }
+                    },
+                    { name: "2公升細煲連蓋",
+                      seq: 3,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 173,
+                          h: 85
+                      }
+                    },
+                    { name: "1.6公升平底鍋",
+                      seq: 4,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 227,
+                          h: 42
+                      }
+                    },
+                    { name: "1.2公升平底鍋",
+                      seq: 5,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 203,
+                          h: 40
+                      }
+                    },
+                    { name: "湯勺",
+                      seq: 6,
+                      status: "good"
+                    }
+                ]
             });
             cooksetsRef.doc("CS05").set({
                 brand: "Tierra",
                 model: "TS-701",
                 pur_dt: new Date("2014", "7", "1"),
-                pur_chnl: "scout_group"
+                pur_chnl: "scout_group",
+                bag: {
+                    status: "good",
+                    color: "black"
+                },
+                components: [
+                    { name: "5公升大煲",
+                      seq: 1,
+                      status: "broken",
+                      remarks: "手柄部分折斷",
+                      size: {
+                          unit: "mm",
+                          d: 225,
+                          h: 128
+                      }
+                    },
+                    { name: "3公升中煲連蓋",
+                      seq: 2,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 198,
+                          h: 108
+                      }
+                    },
+                    { name: "2公升細煲連蓋",
+                      seq: 3,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 173,
+                          h: 85
+                      }
+                    },
+                    { name: "1.6公升平底鍋",
+                      seq: 4,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 227,
+                          h: 42
+                      }
+                    },
+                    { name: "1.2公升平底鍋",
+                      seq: 5,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 203,
+                          h: 40
+                      }
+                    },
+                    { name: "湯勺",
+                      seq: 6,
+                      status: "lost"
+                    }
+                ]
             });
             cooksetsRef.doc("CS06").set({
                 brand: "Tierra",
                 model: "TSB-1402",
                 pur_dt: new Date("2016", "11", "15"),
-                pur_chnl: "school"
+                pur_chnl: "school",
+                bag: {
+                    status: "broken",
+                    color: "blue"
+                },
+                components: [
+                    { name: "4.3公升大煲連蓋",
+                      seq: 1,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 200,
+                          h: 140
+                      }
+                    },
+                    { name: "3公升中煲連蓋",
+                      seq: 2,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 180,
+                          h: 120
+                      }
+                    },
+                    { name: "2公升細煲連蓋",
+                      seq: 3,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 160,
+                          h: 100
+                      }
+                    },
+                    { name: "1.2公升平底鍋",
+                      seq: 4,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 205,
+                          h: 40
+                      }
+                    },
+                    { name: "筲箕",
+                      seq: 5,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 185,
+                          h: 60
+                      }
+                    },
+                    { name: "飯勺",
+                      seq: 6,
+                      status: "good"
+                    },
+                    { name: "湯勺",
+                      seq: 7,
+                      status: "good"
+                    },
+                    { name: "碟x2",
+                      seq: 8,
+                      status: "good"
+                    },
+                    { name: "碗x8",
+                      seq: 9,
+                      status: "good"
+                    }
+                ]
             });
             cooksetsRef.doc("CS07").set({
                 brand: "Tierra",
                 model: "TSB-1402",
                 pur_dt: new Date("2016", "11", "15"),
-                pur_chnl: "school"
+                pur_chnl: "school",
+                bag: {
+                    status: "broken",
+                    color: "blue"
+                },
+                components: [
+                    { name: "4.3公升大煲連蓋",
+                      seq: 1,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 200,
+                          h: 140
+                      }
+                    },
+                    { name: "3公升中煲連蓋",
+                      seq: 2,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 180,
+                          h: 120
+                      }
+                    },
+                    { name: "2公升細煲連蓋",
+                      seq: 3,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 160,
+                          h: 100
+                      }
+                    },
+                    { name: "1.2公升平底鍋",
+                      seq: 4,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 205,
+                          h: 40
+                      }
+                    },
+                    { name: "筲箕",
+                      seq: 5,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 185,
+                          h: 60
+                      }
+                    },
+                    { name: "飯勺",
+                      seq: 6,
+                      status: "good"
+                    },
+                    { name: "湯勺",
+                      seq: 7,
+                      status: "good"
+                    },
+                    { name: "碟x2",
+                      seq: 8,
+                      status: "good"
+                    },
+                    { name: "碗x8",
+                      seq: 9,
+                      status: "good",
+                      remarks: "只有7隻"
+                    }
+                ]
             });
             cooksetsRef.doc("CS08").set({
                 brand: "Tierra",
                 model: "TSB-1402",
                 pur_dt: new Date("2016", "11", "15"),
-                pur_chnl: "school"
+                pur_chnl: "school",
+                bag: {
+                    status: "patched",
+                    color: "blue"
+                },
+                components: [
+                    { name: "4.3公升大煲連蓋",
+                      seq: 1,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 200,
+                          h: 140
+                      }
+                    },
+                    { name: "3公升中煲連蓋",
+                      seq: 2,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 180,
+                          h: 120
+                      }
+                    },
+                    { name: "2公升細煲連蓋",
+                      seq: 3,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 160,
+                          h: 100
+                      }
+                    },
+                    { name: "1.2公升平底鍋",
+                      seq: 4,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 205,
+                          h: 40
+                      }
+                    },
+                    { name: "筲箕",
+                      seq: 5,
+                      status: "good",
+                      size: {
+                          unit: "mm",
+                          d: 185,
+                          h: 60
+                      }
+                    },
+                    { name: "飯勺",
+                      seq: 6,
+                      status: "good"
+                    },
+                    { name: "湯勺",
+                      seq: 7,
+                      status: "good"
+                    },
+                    { name: "碟x2",
+                      seq: 8,
+                      status: "good"
+                    },
+                    { name: "碗x8",
+                      seq: 9,
+                      status: "good",
+                      remarks: "只有7隻"
+                    }
+                ]
             });
 
             // ----------------------------------
@@ -487,7 +919,8 @@ limitations under the License.
                     w: 118,
                     l: 103,
                     h: 92
-                }
+                },
+                status: "good"
             });
             stovesRef.doc("ST04").set({
                 brand: "Kovea",
@@ -500,7 +933,8 @@ limitations under the License.
                     w: 122,
                     l: 100,
                     h: 125
-                }
+                },
+                status: "good"
             });
             stovesRef.doc("ST05").set({
                 brand: "Kovea",
@@ -513,7 +947,8 @@ limitations under the License.
                     w: 122,
                     l: 100,
                     h: 125
-                }
+                },
+                status: "good"
             });
             stovesRef.doc("ST06").set({
                 brand: "Kovea",
@@ -526,7 +961,8 @@ limitations under the License.
                     w: 122,
                     l: 100,
                     h: 125
-                }
+                },
+                status: "good"
             });
             stovesRef.doc("ST07").set({
                 brand: "Kovea",
@@ -539,7 +975,9 @@ limitations under the License.
                     w: 122,
                     l: 100,
                     h: 125
-                }
+                },
+                status: "broken",
+                remarks: "扭制脫落"
             });
             stovesRef.doc("ST08").set({
                 brand: "Kovea",
@@ -552,7 +990,9 @@ limitations under the License.
                     w: 122,
                     l: 100,
                     h: 125
-                }
+                },
+                status: "broken",
+                remarks: "扭制脫落"
             });
             stovesRef.doc("ST09").set({
                 brand: "Kovea",
@@ -565,7 +1005,8 @@ limitations under the License.
                     w: 122,
                     l: 100,
                     h: 125
-                }
+                },
+                status: "good"
             });
             stovesRef.doc("ST10").set({
                 brand: "Kovea",
@@ -578,7 +1019,8 @@ limitations under the License.
                     w: 122,
                     l: 100,
                     h: 125
-                }
+                },
+                status: "good"
             });
             stovesRef.doc("ST11").set({
                 brand: "Kovea",
@@ -591,7 +1033,8 @@ limitations under the License.
                     w: 122,
                     l: 100,
                     h: 125
-                }
+                },
+                status: "good"
             });
             stovesRef.doc("ST12").set({
                 brand: "Kovea",
@@ -604,7 +1047,8 @@ limitations under the License.
                     w: 122,
                     l: 100,
                     h: 125
-                }
+                },
+                status: "good"
             });
             stovesRef.doc("ST13").set({
                 brand: "Kovea",
@@ -617,7 +1061,8 @@ limitations under the License.
                     w: 122,
                     l: 100,
                     h: 125
-                }
+                },
+                status: "good"
             });
             stovesRef.doc("ST14").set({
                 brand: "Kovea",
@@ -630,7 +1075,8 @@ limitations under the License.
                     w: 122,
                     l: 100,
                     h: 125
-                }
+                },
+                status: "good"
             });
             stovesRef.doc("ST15").set({
                 brand: "Kovea",
@@ -643,7 +1089,8 @@ limitations under the License.
                     w: 140,
                     l: 90,
                     h: 145
-                }
+                },
+                status: "good"
             });
             stovesRef.doc("ST16").set({
                 brand: "Kovea",
@@ -656,7 +1103,8 @@ limitations under the License.
                     w: 140,
                     l: 90,
                     h: 145
-                }
+                },
+                status: "good"
             });
 
             // ----------------------------------
@@ -707,47 +1155,58 @@ limitations under the License.
             hammersRef.doc("HM01").set({
                 brand: null,
                 pur_dt: null,
-                pur_chnl: null
+                pur_chnl: null,
+                status: "good"
             });
             hammersRef.doc("HM02").set({
                 brand: null,
                 pur_dt: new Date("2014", "10", "1"),
-                pur_chnl: "scout_group"
+                pur_chnl: "scout_group",
+                status: "good"
             });
             hammersRef.doc("HM04").set({
                 brand: null,
                 pur_dt: new Date("2014", "10", "1"),
-                pur_chnl: "scout_group"
+                pur_chnl: "scout_group",
+                status: "broken",
+                remarks: "一邊鎚損壞"
             });
             hammersRef.doc("HM05").set({
                 brand: null,
                 pur_dt: new Date("2014", "10", "1"),
-                pur_chnl: "scout_group"
+                pur_chnl: "scout_group",
+                status: "broken",
+                remarks: "手柄底部斷開"
             });
             hammersRef.doc("HM06").set({
                 brand: "Quechua",
                 pur_dt: new Date("2018", "4", "1"),
-                pur_chnl: "school"
+                pur_chnl: "school",
+                status: "good"
             });
             hammersRef.doc("HM07").set({
                 brand: "Quechua",
                 pur_dt: new Date("2018", "4", "1"),
-                pur_chnl: "school"
+                pur_chnl: "school",
+                status: "good"
             });
             hammersRef.doc("HM08").set({
                 brand: "Quechua",
                 pur_dt: new Date("2018", "9", "6"),
-                pur_chnl: "ricky_ho"
+                pur_chnl: "ricky_ho",
+                status: "good"
             });
             hammersRef.doc("HM09").set({
                 brand: "Quechua",
                 pur_dt: new Date("2018", "10", "1"),
-                pur_chnl: null
+                pur_chnl: null,
+                status: "good"
             });
             hammersRef.doc("HM10").set({
                 brand: "Quechua",
                 pur_dt: new Date("2018", "10", "1"),
-                pur_chnl: null
+                pur_chnl: null,
+                status: "good"
             });
 
             // ----------------------------------
