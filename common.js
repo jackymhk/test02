@@ -1,13 +1,5 @@
 // Initialize Firebase
-var config = {
-	apiKey: "AIzaSyBGT7AIumjPEpJVjgDr02Drhua2YvxRn84",
-	authDomain: "test02-80c38.firebaseapp.com",
-	databaseURL: "https://test02-80c38.firebaseio.com",
-	projectId: "test02-80c38",
-	storageBucket: "test02-80c38.appspot.com",
-	messagingSenderId: "642799320118"
-};
-firebase.initializeApp(config);
+
 
 // Initialize Cloud Firestore through Firebase
 db = firebase.firestore();
